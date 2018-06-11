@@ -1,0 +1,13 @@
+
+<script>
+try{
+	var msg = "$!rstMsg";
+    if(msg ==""){
+		//parent.$('.modal').modal('hide'); //关闭弹出框
+		parent.bootbox.alert("操作成功！");
+    }else{
+    	parent.bootbox.alert(msg);
+    }
+}
+catch(e){}
+</script>

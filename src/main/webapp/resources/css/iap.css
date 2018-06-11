@@ -1,0 +1,36 @@
+/* 表格中链接样式 */
+.ui-widget-content a:link{
+	text-decoration:none;
+	color:#337ab7;
+}
+
+.ui-widget-content a:hover{
+	cursor:pointer;
+	color:#FF4500;
+	text-decoration:underline;
+}
+
+.ui-widget-content a:active{
+	color:#0000FF;
+	text-decoration:none;
+}
+
+/* 下拉多选组件中搜索样式 */
+.multiselect-container .multiselect-search{
+		height:34px;
+	}
+	
+.labelBtn {
+	border : none;
+	/*color : #F9F9F9;*/ /*白色字体*/
+	padding-left: 8px;
+	padding-bottom: 2px;
+	padding-right: 8px;
+	padding-top: 2px;
+}
+.radio-row {
+	text-align : center;
+}
+.radio-label {
+	width : 150px;
+}

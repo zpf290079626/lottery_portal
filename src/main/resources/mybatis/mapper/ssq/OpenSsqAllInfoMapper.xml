@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zpf.dao.ssq.OpenSsqAllInfoMapper">
+  <resultMap id="BaseResultMap" type="com.zpf.domain.ssq.OpenSsqAllInfo">
+    <id column="id" property="id" jdbcType="BIGINT"/>
+    <result column="red_1" property="red1" jdbcType="TINYINT"/>
+    <result column="red_2" property="red2" jdbcType="TINYINT"/>
+    <result column="red_3" property="red3" jdbcType="TINYINT"/>
+    <result column="red_4" property="red4" jdbcType="TINYINT"/>
+    <result column="red_5" property="red5" jdbcType="TINYINT"/>
+    <result column="red_6" property="red6" jdbcType="TINYINT"/>
+    <result column="red_7" property="red7" jdbcType="TINYINT"/>
+    <result column="red_8" property="red8" jdbcType="TINYINT"/>
+    <result column="red_9" property="red9" jdbcType="TINYINT"/>
+    <result column="red_10" property="red10" jdbcType="TINYINT"/>
+    <result column="red_11" property="red11" jdbcType="TINYINT"/>
+    <result column="red_12" property="red12" jdbcType="TINYINT"/>
+    <result column="red_13" property="red13" jdbcType="TINYINT"/>
+    <result column="red_14" property="red14" jdbcType="TINYINT"/>
+    <result column="red_15" property="red15" jdbcType="TINYINT"/>
+    <result column="red_16" property="red16" jdbcType="TINYINT"/>
+    <result column="red_17" property="red17" jdbcType="TINYINT"/>
+    <result column="red_18" property="red18" jdbcType="TINYINT"/>
+    <result column="red_19" property="red19" jdbcType="TINYINT"/>
+    <result column="red_20" property="red20" jdbcType="TINYINT"/>
+    <result column="red_21" property="red21" jdbcType="TINYINT"/>
+    <result column="red_22" property="red22" jdbcType="TINYINT"/>
+    <result column="red_23" property="red23" jdbcType="TINYINT"/>
+    <result column="red_24" property="red24" jdbcType="TINYINT"/>
+    <result column="red_25" property="red25" jdbcType="TINYINT"/>
+    <result column="red_26" property="red26" jdbcType="TINYINT"/>
+    <result column="red_27" property="red27" jdbcType="TINYINT"/>
+    <result column="red_28" property="red28" jdbcType="TINYINT"/>
+    <result column="red_29" property="red29" jdbcType="TINYINT"/>
+    <result column="red_30" property="red30" jdbcType="TINYINT"/>
+    <result column="red_31" property="red31" jdbcType="TINYINT"/>
+    <result column="red_32" property="red32" jdbcType="TINYINT"/>
+    <result column="red_33" property="red33" jdbcType="TINYINT"/>
+    <result column="blue_1" property="blue1" jdbcType="TINYINT"/>
+    <result column="blue_2" property="blue2" jdbcType="TINYINT"/>
+    <result column="blue_3" property="blue3" jdbcType="TINYINT"/>
+    <result column="blue_4" property="blue4" jdbcType="TINYINT"/>
+    <result column="blue_5" property="blue5" jdbcType="TINYINT"/>
+    <result column="blue_6" property="blue6" jdbcType="TINYINT"/>
+    <result column="blue_7" property="blue7" jdbcType="TINYINT"/>
+    <result column="blue_8" property="blue8" jdbcType="TINYINT"/>
+    <result column="blue_9" property="blue9" jdbcType="TINYINT"/>
+    <result column="blue_10" property="blue10" jdbcType="TINYINT"/>
+    <result column="blue_11" property="blue11" jdbcType="TINYINT"/>
+    <result column="blue_12" property="blue12" jdbcType="TINYINT"/>
+    <result column="blue_13" property="blue13" jdbcType="TINYINT"/>
+    <result column="blue_14" property="blue14" jdbcType="TINYINT"/>
+    <result column="blue_15" property="blue15" jdbcType="TINYINT"/>
+    <result column="blue_16" property="blue16" jdbcType="TINYINT"/>
+    <result column="expect" property="expect" jdbcType="VARCHAR"/>
+    <result column="open_time" property="openTime" jdbcType="VARCHAR"/>
+    <result column="created" property="created" jdbcType="TIMESTAMP"/>
+    <result column="modified" property="modified" jdbcType="TIMESTAMP"/>
+    <result column="operator" property="operator" jdbcType="VARCHAR"/>
+    <result column="yn" property="yn" jdbcType="TINYINT"/>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, red_1, red_2, red_3, red_4, red_5, red_6, red_7, red_8, red_9, red_10, red_11, 
+    red_12, red_13, red_14, red_15, red_16, red_17, red_18, red_19, red_20, red_21, red_22, 
+    red_23, red_24, red_25, red_26, red_27, red_28, red_29, red_30, red_31, red_32, red_33, 
+    blue_1, blue_2, blue_3, blue_4, blue_5, blue_6, blue_7, blue_8, blue_9, blue_10, 
+    blue_11, blue_12, blue_13, blue_14, blue_15, blue_16, expect, open_time, created, 
+    modified, operator, yn
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+    select
+    <include refid="Base_Column_List"/>
+    from OPEN_SSQ_ALL_INFO
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from OPEN_SSQ_ALL_INFO
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zpf.domain.ssq.OpenSsqAllInfo">
+    insert into OPEN_SSQ_ALL_INFO (id, red_1, red_2, 
+      red_3, red_4, red_5, red_6, 
+      red_7, red_8, red_9, red_10, 
+      red_11, red_12, red_13, 
+      red_14, red_15, red_16, 
+      red_17, red_18, red_19, 
+      red_20, red_21, red_22, 
+      red_23, red_24, red_25, 
+      red_26, red_27, red_28, 
+      red_29, red_30, red_31, 
+      red_32, red_33, blue_1, 
+      blue_2, blue_3, blue_4, 
+      blue_5, blue_6, blue_7, 
+      blue_8, blue_9, blue_10, 
+      blue_11, blue_12, blue_13, 
+      blue_14, blue_15, blue_16, 
+      expect, open_time, created, 
+      modified, operator, yn
+      )
+    values (#{id,jdbcType=BIGINT}, #{red1,jdbcType=TINYINT}, #{red2,jdbcType=TINYINT}, 
+      #{red3,jdbcType=TINYINT}, #{red4,jdbcType=TINYINT}, #{red5,jdbcType=TINYINT}, #{red6,jdbcType=TINYINT}, 
+      #{red7,jdbcType=TINYINT}, #{red8,jdbcType=TINYINT}, #{red9,jdbcType=TINYINT}, #{red10,jdbcType=TINYINT}, 
+      #{red11,jdbcType=TINYINT}, #{red12,jdbcType=TINYINT}, #{red13,jdbcType=TINYINT}, 
+      #{red14,jdbcType=TINYINT}, #{red15,jdbcType=TINYINT}, #{red16,jdbcType=TINYINT}, 
+      #{red17,jdbcType=TINYINT}, #{red18,jdbcType=TINYINT}, #{red19,jdbcType=TINYINT}, 
+      #{red20,jdbcType=TINYINT}, #{red21,jdbcType=TINYINT}, #{red22,jdbcType=TINYINT}, 
+      #{red23,jdbcType=TINYINT}, #{red24,jdbcType=TINYINT}, #{red25,jdbcType=TINYINT}, 
+      #{red26,jdbcType=TINYINT}, #{red27,jdbcType=TINYINT}, #{red28,jdbcType=TINYINT}, 
+      #{red29,jdbcType=TINYINT}, #{red30,jdbcType=TINYINT}, #{red31,jdbcType=TINYINT}, 
+      #{red32,jdbcType=TINYINT}, #{red33,jdbcType=TINYINT}, #{blue1,jdbcType=TINYINT}, 
+      #{blue2,jdbcType=TINYINT}, #{blue3,jdbcType=TINYINT}, #{blue4,jdbcType=TINYINT}, 
+      #{blue5,jdbcType=TINYINT}, #{blue6,jdbcType=TINYINT}, #{blue7,jdbcType=TINYINT}, 
+      #{blue8,jdbcType=TINYINT}, #{blue9,jdbcType=TINYINT}, #{blue10,jdbcType=TINYINT}, 
+      #{blue11,jdbcType=TINYINT}, #{blue12,jdbcType=TINYINT}, #{blue13,jdbcType=TINYINT}, 
+      #{blue14,jdbcType=TINYINT}, #{blue15,jdbcType=TINYINT}, #{blue16,jdbcType=TINYINT}, 
+      #{expect,jdbcType=VARCHAR}, #{openTime,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
+      #{modified,jdbcType=TIMESTAMP}, #{operator,jdbcType=VARCHAR}, #{yn,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zpf.domain.ssq.OpenSsqAllInfo">
+    insert into OPEN_SSQ_ALL_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="red1 != null">
+        red_1,
+      </if>
+      <if test="red2 != null">
+        red_2,
+      </if>
+      <if test="red3 != null">
+        red_3,
+      </if>
+      <if test="red4 != null">
+        red_4,
+      </if>
+      <if test="red5 != null">
+        red_5,
+      </if>
+      <if test="red6 != null">
+        red_6,
+      </if>
+      <if test="red7 != null">
+        red_7,
+      </if>
+      <if test="red8 != null">
+        red_8,
+      </if>
+      <if test="red9 != null">
+        red_9,
+      </if>
+      <if test="red10 != null">
+        red_10,
+      </if>
+      <if test="red11 != null">
+        red_11,
+      </if>
+      <if test="red12 != null">
+        red_12,
+      </if>
+      <if test="red13 != null">
+        red_13,
+      </if>
+      <if test="red14 != null">
+        red_14,
+      </if>
+      <if test="red15 != null">
+        red_15,
+      </if>
+      <if test="red16 != null">
+        red_16,
+      </if>
+      <if test="red17 != null">
+        red_17,
+      </if>
+      <if test="red18 != null">
+        red_18,
+      </if>
+      <if test="red19 != null">
+        red_19,
+      </if>
+      <if test="red20 != null">
+        red_20,
+      </if>
+      <if test="red21 != null">
+        red_21,
+      </if>
+      <if test="red22 != null">
+        red_22,
+      </if>
+      <if test="red23 != null">
+        red_23,
+      </if>
+      <if test="red24 != null">
+        red_24,
+      </if>
+      <if test="red25 != null">
+        red_25,
+      </if>
+      <if test="red26 != null">
+        red_26,
+      </if>
+      <if test="red27 != null">
+        red_27,
+      </if>
+      <if test="red28 != null">
+        red_28,
+      </if>
+      <if test="red29 != null">
+        red_29,
+      </if>
+      <if test="red30 != null">
+        red_30,
+      </if>
+      <if test="red31 != null">
+        red_31,
+      </if>
+      <if test="red32 != null">
+        red_32,
+      </if>
+      <if test="red33 != null">
+        red_33,
+      </if>
+      <if test="blue1 != null">
+        blue_1,
+      </if>
+      <if test="blue2 != null">
+        blue_2,
+      </if>
+      <if test="blue3 != null">
+        blue_3,
+      </if>
+      <if test="blue4 != null">
+        blue_4,
+      </if>
+      <if test="blue5 != null">
+        blue_5,
+      </if>
+      <if test="blue6 != null">
+        blue_6,
+      </if>
+      <if test="blue7 != null">
+        blue_7,
+      </if>
+      <if test="blue8 != null">
+        blue_8,
+      </if>
+      <if test="blue9 != null">
+        blue_9,
+      </if>
+      <if test="blue10 != null">
+        blue_10,
+      </if>
+      <if test="blue11 != null">
+        blue_11,
+      </if>
+      <if test="blue12 != null">
+        blue_12,
+      </if>
+      <if test="blue13 != null">
+        blue_13,
+      </if>
+      <if test="blue14 != null">
+        blue_14,
+      </if>
+      <if test="blue15 != null">
+        blue_15,
+      </if>
+      <if test="blue16 != null">
+        blue_16,
+      </if>
+      <if test="expect != null">
+        expect,
+      </if>
+      <if test="openTime != null">
+        open_time,
+      </if>
+      <if test="created != null">
+        created,
+      </if>
+      <if test="modified != null">
+        modified,
+      </if>
+      <if test="operator != null">
+        operator,
+      </if>
+      <if test="yn != null">
+        yn,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="red1 != null">
+        #{red1,jdbcType=TINYINT},
+      </if>
+      <if test="red2 != null">
+        #{red2,jdbcType=TINYINT},
+      </if>
+      <if test="red3 != null">
+        #{red3,jdbcType=TINYINT},
+      </if>
+      <if test="red4 != null">
+        #{red4,jdbcType=TINYINT},
+      </if>
+      <if test="red5 != null">
+        #{red5,jdbcType=TINYINT},
+      </if>
+      <if test="red6 != null">
+        #{red6,jdbcType=TINYINT},
+      </if>
+      <if test="red7 != null">
+        #{red7,jdbcType=TINYINT},
+      </if>
+      <if test="red8 != null">
+        #{red8,jdbcType=TINYINT},
+      </if>
+      <if test="red9 != null">
+        #{red9,jdbcType=TINYINT},
+      </if>
+      <if test="red10 != null">
+        #{red10,jdbcType=TINYINT},
+      </if>
+      <if test="red11 != null">
+        #{red11,jdbcType=TINYINT},
+      </if>
+      <if test="red12 != null">
+        #{red12,jdbcType=TINYINT},
+      </if>
+      <if test="red13 != null">
+        #{red13,jdbcType=TINYINT},
+      </if>
+      <if test="red14 != null">
+        #{red14,jdbcType=TINYINT},
+      </if>
+      <if test="red15 != null">
+        #{red15,jdbcType=TINYINT},
+      </if>
+      <if test="red16 != null">
+        #{red16,jdbcType=TINYINT},
+      </if>
+      <if test="red17 != null">
+        #{red17,jdbcType=TINYINT},
+      </if>
+      <if test="red18 != null">
+        #{red18,jdbcType=TINYINT},
+      </if>
+      <if test="red19 != null">
+        #{red19,jdbcType=TINYINT},
+      </if>
+      <if test="red20 != null">
+        #{red20,jdbcType=TINYINT},
+      </if>
+      <if test="red21 != null">
+        #{red21,jdbcType=TINYINT},
+      </if>
+      <if test="red22 != null">
+        #{red22,jdbcType=TINYINT},
+      </if>
+      <if test="red23 != null">
+        #{red23,jdbcType=TINYINT},
+      </if>
+      <if test="red24 != null">
+        #{red24,jdbcType=TINYINT},
+      </if>
+      <if test="red25 != null">
+        #{red25,jdbcType=TINYINT},
+      </if>
+      <if test="red26 != null">
+        #{red26,jdbcType=TINYINT},
+      </if>
+      <if test="red27 != null">
+        #{red27,jdbcType=TINYINT},
+      </if>
+      <if test="red28 != null">
+        #{red28,jdbcType=TINYINT},
+      </if>
+      <if test="red29 != null">
+        #{red29,jdbcType=TINYINT},
+      </if>
+      <if test="red30 != null">
+        #{red30,jdbcType=TINYINT},
+      </if>
+      <if test="red31 != null">
+        #{red31,jdbcType=TINYINT},
+      </if>
+      <if test="red32 != null">
+        #{red32,jdbcType=TINYINT},
+      </if>
+      <if test="red33 != null">
+        #{red33,jdbcType=TINYINT},
+      </if>
+      <if test="blue1 != null">
+        #{blue1,jdbcType=TINYINT},
+      </if>
+      <if test="blue2 != null">
+        #{blue2,jdbcType=TINYINT},
+      </if>
+      <if test="blue3 != null">
+        #{blue3,jdbcType=TINYINT},
+      </if>
+      <if test="blue4 != null">
+        #{blue4,jdbcType=TINYINT},
+      </if>
+      <if test="blue5 != null">
+        #{blue5,jdbcType=TINYINT},
+      </if>
+      <if test="blue6 != null">
+        #{blue6,jdbcType=TINYINT},
+      </if>
+      <if test="blue7 != null">
+        #{blue7,jdbcType=TINYINT},
+      </if>
+      <if test="blue8 != null">
+        #{blue8,jdbcType=TINYINT},
+      </if>
+      <if test="blue9 != null">
+        #{blue9,jdbcType=TINYINT},
+      </if>
+      <if test="blue10 != null">
+        #{blue10,jdbcType=TINYINT},
+      </if>
+      <if test="blue11 != null">
+        #{blue11,jdbcType=TINYINT},
+      </if>
+      <if test="blue12 != null">
+        #{blue12,jdbcType=TINYINT},
+      </if>
+      <if test="blue13 != null">
+        #{blue13,jdbcType=TINYINT},
+      </if>
+      <if test="blue14 != null">
+        #{blue14,jdbcType=TINYINT},
+      </if>
+      <if test="blue15 != null">
+        #{blue15,jdbcType=TINYINT},
+      </if>
+      <if test="blue16 != null">
+        #{blue16,jdbcType=TINYINT},
+      </if>
+      <if test="expect != null">
+        #{expect,jdbcType=VARCHAR},
+      </if>
+      <if test="openTime != null">
+        #{openTime,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modified != null">
+        #{modified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null">
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="yn != null">
+        #{yn,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zpf.domain.ssq.OpenSsqAllInfo">
+    update OPEN_SSQ_ALL_INFO
+    <set>
+      <if test="red1 != null">
+        red_1 = #{red1,jdbcType=TINYINT},
+      </if>
+      <if test="red2 != null">
+        red_2 = #{red2,jdbcType=TINYINT},
+      </if>
+      <if test="red3 != null">
+        red_3 = #{red3,jdbcType=TINYINT},
+      </if>
+      <if test="red4 != null">
+        red_4 = #{red4,jdbcType=TINYINT},
+      </if>
+      <if test="red5 != null">
+        red_5 = #{red5,jdbcType=TINYINT},
+      </if>
+      <if test="red6 != null">
+        red_6 = #{red6,jdbcType=TINYINT},
+      </if>
+      <if test="red7 != null">
+        red_7 = #{red7,jdbcType=TINYINT},
+      </if>
+      <if test="red8 != null">
+        red_8 = #{red8,jdbcType=TINYINT},
+      </if>
+      <if test="red9 != null">
+        red_9 = #{red9,jdbcType=TINYINT},
+      </if>
+      <if test="red10 != null">
+        red_10 = #{red10,jdbcType=TINYINT},
+      </if>
+      <if test="red11 != null">
+        red_11 = #{red11,jdbcType=TINYINT},
+      </if>
+      <if test="red12 != null">
+        red_12 = #{red12,jdbcType=TINYINT},
+      </if>
+      <if test="red13 != null">
+        red_13 = #{red13,jdbcType=TINYINT},
+      </if>
+      <if test="red14 != null">
+        red_14 = #{red14,jdbcType=TINYINT},
+      </if>
+      <if test="red15 != null">
+        red_15 = #{red15,jdbcType=TINYINT},
+      </if>
+      <if test="red16 != null">
+        red_16 = #{red16,jdbcType=TINYINT},
+      </if>
+      <if test="red17 != null">
+        red_17 = #{red17,jdbcType=TINYINT},
+      </if>
+      <if test="red18 != null">
+        red_18 = #{red18,jdbcType=TINYINT},
+      </if>
+      <if test="red19 != null">
+        red_19 = #{red19,jdbcType=TINYINT},
+      </if>
+      <if test="red20 != null">
+        red_20 = #{red20,jdbcType=TINYINT},
+      </if>
+      <if test="red21 != null">
+        red_21 = #{red21,jdbcType=TINYINT},
+      </if>
+      <if test="red22 != null">
+        red_22 = #{red22,jdbcType=TINYINT},
+      </if>
+      <if test="red23 != null">
+        red_23 = #{red23,jdbcType=TINYINT},
+      </if>
+      <if test="red24 != null">
+        red_24 = #{red24,jdbcType=TINYINT},
+      </if>
+      <if test="red25 != null">
+        red_25 = #{red25,jdbcType=TINYINT},
+      </if>
+      <if test="red26 != null">
+        red_26 = #{red26,jdbcType=TINYINT},
+      </if>
+      <if test="red27 != null">
+        red_27 = #{red27,jdbcType=TINYINT},
+      </if>
+      <if test="red28 != null">
+        red_28 = #{red28,jdbcType=TINYINT},
+      </if>
+      <if test="red29 != null">
+        red_29 = #{red29,jdbcType=TINYINT},
+      </if>
+      <if test="red30 != null">
+        red_30 = #{red30,jdbcType=TINYINT},
+      </if>
+      <if test="red31 != null">
+        red_31 = #{red31,jdbcType=TINYINT},
+      </if>
+      <if test="red32 != null">
+        red_32 = #{red32,jdbcType=TINYINT},
+      </if>
+      <if test="red33 != null">
+        red_33 = #{red33,jdbcType=TINYINT},
+      </if>
+      <if test="blue1 != null">
+        blue_1 = #{blue1,jdbcType=TINYINT},
+      </if>
+      <if test="blue2 != null">
+        blue_2 = #{blue2,jdbcType=TINYINT},
+      </if>
+      <if test="blue3 != null">
+        blue_3 = #{blue3,jdbcType=TINYINT},
+      </if>
+      <if test="blue4 != null">
+        blue_4 = #{blue4,jdbcType=TINYINT},
+      </if>
+      <if test="blue5 != null">
+        blue_5 = #{blue5,jdbcType=TINYINT},
+      </if>
+      <if test="blue6 != null">
+        blue_6 = #{blue6,jdbcType=TINYINT},
+      </if>
+      <if test="blue7 != null">
+        blue_7 = #{blue7,jdbcType=TINYINT},
+      </if>
+      <if test="blue8 != null">
+        blue_8 = #{blue8,jdbcType=TINYINT},
+      </if>
+      <if test="blue9 != null">
+        blue_9 = #{blue9,jdbcType=TINYINT},
+      </if>
+      <if test="blue10 != null">
+        blue_10 = #{blue10,jdbcType=TINYINT},
+      </if>
+      <if test="blue11 != null">
+        blue_11 = #{blue11,jdbcType=TINYINT},
+      </if>
+      <if test="blue12 != null">
+        blue_12 = #{blue12,jdbcType=TINYINT},
+      </if>
+      <if test="blue13 != null">
+        blue_13 = #{blue13,jdbcType=TINYINT},
+      </if>
+      <if test="blue14 != null">
+        blue_14 = #{blue14,jdbcType=TINYINT},
+      </if>
+      <if test="blue15 != null">
+        blue_15 = #{blue15,jdbcType=TINYINT},
+      </if>
+      <if test="blue16 != null">
+        blue_16 = #{blue16,jdbcType=TINYINT},
+      </if>
+      <if test="expect != null">
+        expect = #{expect,jdbcType=VARCHAR},
+      </if>
+      <if test="openTime != null">
+        open_time = #{openTime,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modified != null">
+        modified = #{modified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null">
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="yn != null">
+        yn = #{yn,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zpf.domain.ssq.OpenSsqAllInfo">
+    update OPEN_SSQ_ALL_INFO
+    set red_1 = #{red1,jdbcType=TINYINT},
+      red_2 = #{red2,jdbcType=TINYINT},
+      red_3 = #{red3,jdbcType=TINYINT},
+      red_4 = #{red4,jdbcType=TINYINT},
+      red_5 = #{red5,jdbcType=TINYINT},
+      red_6 = #{red6,jdbcType=TINYINT},
+      red_7 = #{red7,jdbcType=TINYINT},
+      red_8 = #{red8,jdbcType=TINYINT},
+      red_9 = #{red9,jdbcType=TINYINT},
+      red_10 = #{red10,jdbcType=TINYINT},
+      red_11 = #{red11,jdbcType=TINYINT},
+      red_12 = #{red12,jdbcType=TINYINT},
+      red_13 = #{red13,jdbcType=TINYINT},
+      red_14 = #{red14,jdbcType=TINYINT},
+      red_15 = #{red15,jdbcType=TINYINT},
+      red_16 = #{red16,jdbcType=TINYINT},
+      red_17 = #{red17,jdbcType=TINYINT},
+      red_18 = #{red18,jdbcType=TINYINT},
+      red_19 = #{red19,jdbcType=TINYINT},
+      red_20 = #{red20,jdbcType=TINYINT},
+      red_21 = #{red21,jdbcType=TINYINT},
+      red_22 = #{red22,jdbcType=TINYINT},
+      red_23 = #{red23,jdbcType=TINYINT},
+      red_24 = #{red24,jdbcType=TINYINT},
+      red_25 = #{red25,jdbcType=TINYINT},
+      red_26 = #{red26,jdbcType=TINYINT},
+      red_27 = #{red27,jdbcType=TINYINT},
+      red_28 = #{red28,jdbcType=TINYINT},
+      red_29 = #{red29,jdbcType=TINYINT},
+      red_30 = #{red30,jdbcType=TINYINT},
+      red_31 = #{red31,jdbcType=TINYINT},
+      red_32 = #{red32,jdbcType=TINYINT},
+      red_33 = #{red33,jdbcType=TINYINT},
+      blue_1 = #{blue1,jdbcType=TINYINT},
+      blue_2 = #{blue2,jdbcType=TINYINT},
+      blue_3 = #{blue3,jdbcType=TINYINT},
+      blue_4 = #{blue4,jdbcType=TINYINT},
+      blue_5 = #{blue5,jdbcType=TINYINT},
+      blue_6 = #{blue6,jdbcType=TINYINT},
+      blue_7 = #{blue7,jdbcType=TINYINT},
+      blue_8 = #{blue8,jdbcType=TINYINT},
+      blue_9 = #{blue9,jdbcType=TINYINT},
+      blue_10 = #{blue10,jdbcType=TINYINT},
+      blue_11 = #{blue11,jdbcType=TINYINT},
+      blue_12 = #{blue12,jdbcType=TINYINT},
+      blue_13 = #{blue13,jdbcType=TINYINT},
+      blue_14 = #{blue14,jdbcType=TINYINT},
+      blue_15 = #{blue15,jdbcType=TINYINT},
+      blue_16 = #{blue16,jdbcType=TINYINT},
+      expect = #{expect,jdbcType=VARCHAR},
+      open_time = #{openTime,jdbcType=VARCHAR},
+      created = #{created,jdbcType=TIMESTAMP},
+      modified = #{modified,jdbcType=TIMESTAMP},
+      operator = #{operator,jdbcType=VARCHAR},
+      yn = #{yn,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="queryExistByExpect" resultType="int">
+    select count(*) from
+    OPEN_SSQ_ALL_INFO
+    where expect = #{expect}
+    and yn = 1
+  </select>
+</mapper>

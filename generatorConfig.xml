@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!--数据库驱动-->
+    <!-- <classPathEntry location="mysql-connector-java-5.1.6.jar"/> -->
+
+    <context id="my" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+		<!--数据库链接地址账号密码-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://39.105.44.18:3306/lottery_portal"
+                        userId="zpf"
+                        password="Zpf290079626!"/>
+
+
+		<!--生成Model类存放位置-->
+        <javaModelGenerator targetPackage="com.zpf.domain.common"
+                            targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+		<!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="mybatis.mapper.common"
+                         targetProject="./src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+		<!--生成Dao类存放位置-->
+        <javaClientGenerator targetPackage="com.zpf.dao.common"
+                             targetProject="./src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="USER_SUBSCRIPTION_OPEN_INFO" domainObjectName="UserSubscriptionOpenInfo"
+          enableCountByExample="false" enableUpdateByExample="false"
+          enableDeleteByExample="false" enableSelectByExample="false"
+          selectByExampleQueryId="false">
+        </table>
+
+    </context>
+</generatorConfiguration>

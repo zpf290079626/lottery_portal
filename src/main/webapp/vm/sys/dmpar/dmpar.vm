@@ -1,0 +1,4 @@
+#parse("nav/nav.vm")
+<center>
+	<h3>数据字典暂时未开发，请后台处理</h3>
+</center>

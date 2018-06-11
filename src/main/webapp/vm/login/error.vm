@@ -1,0 +1,5 @@
+	<div class="center-block"  style="width:200px;">
+		#if($!{loginError} != '')
+			<h3>$!{loginError}</h3>
+		#end
+	</div>

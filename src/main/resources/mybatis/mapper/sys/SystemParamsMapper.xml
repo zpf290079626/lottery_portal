@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zpf.dao.sys.SystemParamsMapper">
+	<resultMap id="BaseResultMap"
+		type="com.zpf.domain.common.SystemParamDomain">
+		<id column="PARAM_ID" property="paramId" jdbcType="CHAR" />
+		<result column="PARAM_NAME" property="paramName" jdbcType="VARCHAR" />
+		<result column="PARAM_VALUE" property="paramValue" jdbcType="VARCHAR" />
+		<result column="MEMO" property="memo" jdbcType="VARCHAR" />
+		<result column="MT_USER" property="mtUser" jdbcType="CHAR" />
+		<result column="MT_USER_NAME" property="mtUserName" jdbcType="VARCHAR" />
+		<result column="MT_TIME" property="mtTime" jdbcType="VARCHAR" />
+		<result column="STATUS" property="status" jdbcType="CHAR" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		PARAM_ID,PARAM_NAME,PARAM_VALUE,MEMO,MT_USER,MT_TIME,STATUS
+	</sql>
+	
+	
+	<select id="selectByExample" resultMap="BaseResultMap"
+		parameterType="com.zpf.domain.common.SystemParamDomain">
+		select
+		s.PARAM_ID,s.PARAM_NAME,s.PARAM_VALUE,s.MEMO,s.MT_USER,s.MT_TIME,s.STATUS
+		from SYSTEM_PARAMS s
+		<where>
+			<if test="systemParam.paramId != null and systemParam.paramId != ''">
+				s.PARAM_ID = #{systemParam.paramId}
+			</if>
+			<if test="systemParam.paramName != null and systemParam.paramName != ''">
+				and s.PARAM_NAME = #{systemParam.paramName}
+			</if>
+			<if test="systemParam.paramValue != null and systemParam.paramValue != ''">
+				and s.PARAM_VALUE = #{systemParam.paramValue}
+			</if>
+			<if test="systemParam.memo != null and systemParam.memo != ''">
+				and s.MEMO = #{systemParam.memo}
+			</if>
+			<if test="systemParam.mtUser != null and systemParam.mtUser != ''">
+				and s.MT_USER = #{systemParam.mtUser}
+			</if>
+			<if test="systemParam.mtTime != null and systemParam.mtTime != ''">
+				and substr(ltrim(a.MT_TIME),1,10) = #{systemParam.mtTime}
+			</if>
+			<if test="systemParam.status != null and systemParam.status != ''">
+				and s.STATUS = #{systemParam.status}
+			</if>
+		</where>
+		order by s.PARAM_ID asc
+	</select>
+	
+	<select id="selectAllData" resultMap="BaseResultMap" >
+		select
+		s.PARAM_ID,s.PARAM_NAME,s.PARAM_VALUE,s.MEMO,s.MT_USER,s.MT_TIME,s.STATUS
+		from SYSTEM_PARAMS s
+		order by s.PARAM_ID asc
+	</select>
+	
+	<insert id="insert" parameterType="com.zpf.domain.common.SystemParamDomain">
+		insert into SYSTEM_PARAMS(<include refid="Base_Column_List" />)
+		values(#{systemParam.paramId},#{systemParam.paramName},#{systemParam.paramValue},#{systemParam.memo},#{systemParam.mtUser},#{systemParam.mtTime},#{systemParam.status})	
+	</insert>
+	
+	<update id="updateByPrimaryKey" parameterType="com.zpf.domain.common.SystemParamDomain">
+		update SYSTEM_PARAMS
+		<set>			
+			<if test="systemParam.paramName != null and systemParam.paramName != ''">
+				PARAM_NAME = #{systemParam.paramName},
+			</if>
+			<if test="systemParam.paramValue != null and systemParam.paramValue != ''">
+				PARAM_VALUE = #{systemParam.paramValue},
+			</if>
+			<if test="systemParam.memo != null and systemParam.memo != ''">
+				MEMO = #{systemParam.memo},
+			</if>
+			<if test="systemParam.mtUser != null and systemParam.mtUser != ''">
+				MT_USER = #{systemParam.mtUser},
+			</if>
+			<if test="systemParam.mtTime != null and systemParam.mtTime != ''">
+				MT_TIME = #{systemParam.mtTime},
+			</if>
+			<if test="systemParam.status != null and systemParam.status != ''">
+				STATUS = #{systemParam.status},
+			</if>
+		</set>
+		where PARAM_ID = #{systemParam.paramId}
+	</update>	
+	
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from SYSTEM_PARAMS
+		where PARAM_ID = #{paramId}
+	</delete>
+	
+	<select id="selectByParamName" resultType="java.lang.String">
+		select PARAM_VALUE from SYSTEM_PARAMS where PARAM_NAME = #{paramName}
+	</select>
+	
+</mapper>

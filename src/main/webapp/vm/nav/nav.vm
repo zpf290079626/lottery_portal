@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse" role="navigation">
+	<div class="container-fluid"> 
+		<div>
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						系统运维 <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+              	      <li><a href="#">XXXXX</a></li>
+              	      <li><a href="#">XXXXX</a></li>
+              	      <li><a href="/dmparController/gotoDmpar">数据字典维护</a></li>
+          	      </ul>
+         	   </li>
+        	</ul>
+    	</div>
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">待开发功能1</a>
+		</div>
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">待开发功能2</a>
+		</div>
+		<div>
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						参数表 <b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+              	      <li><a href="/paramSpsController/spsMain">参数表1</a></li>
+              	      <li><a href="#">参数表2</a></li>
+              	      <li><a href="#">参数表3</a></li>
+          	      </ul>
+         	   </li>
+        	</ul>
+    	</div>	
+	</div>
+</nav>
+
+<script type="text/javascript" src="#springUrl("/resources/js/bootstrap/bootstrap.min.js")"></script>

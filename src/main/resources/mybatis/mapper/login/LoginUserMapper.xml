@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zpf.dao.login.LoginUserMapper">
+
+	<resultMap id="beanMap" type="com.zpf.domain.login.PortalUserDomain">
+		<id column="USER_ID" property="userId" />
+		<result column="USER_PASS" property="userPass" />
+		<result column="USER_NAME" property="userName" />
+		<result column="TEL" property="tel" />
+		<result column="MOBILE" property="mobile" />
+		<result column="EMAIL" property="email" />
+		<result column="MT_USER" property="mtUser" />
+		<result column="VALID_DATE" property="validDate" />
+		<result column="INVALID_DATE" property="invalidDate" />
+		<result column="STATUS" property="status" />
+		<result column="MT_TIME" property="mtTime" />
+	</resultMap>
+
+	<select id="findUserByUserId" parameterType="string" resultMap="beanMap">
+		select * from PORTAL_USER
+		where USER_ID = #{userId}
+	</select>
+
+	<select id="findUserByUserIdAndPassword" parameterType="string"
+		resultMap="beanMap">
+		select * from PORTAL_USER
+		where USER_ID=#{userId}
+		and
+		USER_PASS=#{passWord}
+	</select>
+
+	<insert id="register" parameterType="com.zpf.domain.login.PortalUserDomain">
+		insert into PORTAL_USER
+		(USER_ID,USER_PASS,USER_NAME,MOBILE,EMAIL,VALID_DATE,STATUS,MT_TIME)
+		values
+		(#{userId},#{userPass},#{userName},#{mobile},#{email},#{validDate},#{status},#{mtTime})
+	</insert>
+
+</mapper>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zpf.dao.ssq.OpenSsqInfoMapper">
+  <resultMap id="BaseResultMap" type="com.zpf.domain.ssq.OpenSsqInfo">
+    <id column="id" property="id" jdbcType="BIGINT"/>
+    <result column="red_1" property="red1" jdbcType="TINYINT"/>
+    <result column="red_2" property="red2" jdbcType="TINYINT"/>
+    <result column="red_3" property="red3" jdbcType="TINYINT"/>
+    <result column="red_4" property="red4" jdbcType="TINYINT"/>
+    <result column="red_5" property="red5" jdbcType="TINYINT"/>
+    <result column="red_6" property="red6" jdbcType="TINYINT"/>
+    <result column="blue" property="blue" jdbcType="TINYINT"/>
+    <result column="expect" property="expect" jdbcType="VARCHAR"/>
+    <result column="open_time" property="openTime" jdbcType="VARCHAR"/>
+    <result column="created" property="created" jdbcType="TIMESTAMP"/>
+    <result column="modified" property="modified" jdbcType="TIMESTAMP"/>
+    <result column="operator" property="operator" jdbcType="VARCHAR"/>
+    <result column="yn" property="yn" jdbcType="TINYINT"/>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, red_1, red_2, red_3, red_4, red_5, red_6, blue, expect, open_time, created, modified, 
+    operator, yn
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+    select
+    <include refid="Base_Column_List"/>
+    from OPEN_SSQ_INFO
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from OPEN_SSQ_INFO
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.zpf.domain.ssq.OpenSsqInfo">
+    insert into OPEN_SSQ_INFO (id, red_1, red_2, 
+      red_3, red_4, red_5, red_6, 
+      blue, expect, open_time, 
+      created, modified, operator, 
+      yn)
+    values (#{id,jdbcType=BIGINT}, #{red1,jdbcType=TINYINT}, #{red2,jdbcType=TINYINT}, 
+      #{red3,jdbcType=TINYINT}, #{red4,jdbcType=TINYINT}, #{red5,jdbcType=TINYINT}, #{red6,jdbcType=TINYINT}, 
+      #{blue,jdbcType=TINYINT}, #{expect,jdbcType=VARCHAR}, #{openTime,jdbcType=VARCHAR}, 
+      #{created,jdbcType=TIMESTAMP}, #{modified,jdbcType=TIMESTAMP}, #{operator,jdbcType=VARCHAR}, 
+      #{yn,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zpf.domain.ssq.OpenSsqInfo">
+    insert into OPEN_SSQ_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="red1 != null">
+        red_1,
+      </if>
+      <if test="red2 != null">
+        red_2,
+      </if>
+      <if test="red3 != null">
+        red_3,
+      </if>
+      <if test="red4 != null">
+        red_4,
+      </if>
+      <if test="red5 != null">
+        red_5,
+      </if>
+      <if test="red6 != null">
+        red_6,
+      </if>
+      <if test="blue != null">
+        blue,
+      </if>
+      <if test="expect != null">
+        expect,
+      </if>
+      <if test="openTime != null">
+        open_time,
+      </if>
+      <if test="created != null">
+        created,
+      </if>
+      <if test="modified != null">
+        modified,
+      </if>
+      <if test="operator != null">
+        operator,
+      </if>
+      <if test="yn != null">
+        yn,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="red1 != null">
+        #{red1,jdbcType=TINYINT},
+      </if>
+      <if test="red2 != null">
+        #{red2,jdbcType=TINYINT},
+      </if>
+      <if test="red3 != null">
+        #{red3,jdbcType=TINYINT},
+      </if>
+      <if test="red4 != null">
+        #{red4,jdbcType=TINYINT},
+      </if>
+      <if test="red5 != null">
+        #{red5,jdbcType=TINYINT},
+      </if>
+      <if test="red6 != null">
+        #{red6,jdbcType=TINYINT},
+      </if>
+      <if test="blue != null">
+        #{blue,jdbcType=TINYINT},
+      </if>
+      <if test="expect != null">
+        #{expect,jdbcType=VARCHAR},
+      </if>
+      <if test="openTime != null">
+        #{openTime,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modified != null">
+        #{modified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null">
+        #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="yn != null">
+        #{yn,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zpf.domain.ssq.OpenSsqInfo">
+    update OPEN_SSQ_INFO
+    <set>
+      <if test="red1 != null">
+        red_1 = #{red1,jdbcType=TINYINT},
+      </if>
+      <if test="red2 != null">
+        red_2 = #{red2,jdbcType=TINYINT},
+      </if>
+      <if test="red3 != null">
+        red_3 = #{red3,jdbcType=TINYINT},
+      </if>
+      <if test="red4 != null">
+        red_4 = #{red4,jdbcType=TINYINT},
+      </if>
+      <if test="red5 != null">
+        red_5 = #{red5,jdbcType=TINYINT},
+      </if>
+      <if test="red6 != null">
+        red_6 = #{red6,jdbcType=TINYINT},
+      </if>
+      <if test="blue != null">
+        blue = #{blue,jdbcType=TINYINT},
+      </if>
+      <if test="expect != null">
+        expect = #{expect,jdbcType=VARCHAR},
+      </if>
+      <if test="openTime != null">
+        open_time = #{openTime,jdbcType=VARCHAR},
+      </if>
+      <if test="created != null">
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modified != null">
+        modified = #{modified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operator != null">
+        operator = #{operator,jdbcType=VARCHAR},
+      </if>
+      <if test="yn != null">
+        yn = #{yn,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zpf.domain.ssq.OpenSsqInfo">
+    update OPEN_SSQ_INFO
+    set red_1 = #{red1,jdbcType=TINYINT},
+      red_2 = #{red2,jdbcType=TINYINT},
+      red_3 = #{red3,jdbcType=TINYINT},
+      red_4 = #{red4,jdbcType=TINYINT},
+      red_5 = #{red5,jdbcType=TINYINT},
+      red_6 = #{red6,jdbcType=TINYINT},
+      blue = #{blue,jdbcType=TINYINT},
+      expect = #{expect,jdbcType=VARCHAR},
+      open_time = #{openTime,jdbcType=VARCHAR},
+      created = #{created,jdbcType=TIMESTAMP},
+      modified = #{modified,jdbcType=TIMESTAMP},
+      operator = #{operator,jdbcType=VARCHAR},
+      yn = #{yn,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="queryExistByExpect" resultType="int">
+    select count(*) from
+    OPEN_SSQ_INFO
+    where expect = #{expect}
+    and yn = 1
+  </select>
+
+  <select id="selectByExpect" resultMap="BaseResultMap" >
+    select * from OPEN_SSQ_INFO
+    where expect in
+    <foreach collection="list" item="item" open="(" close=")" separator=",">
+      #{item}
+    </foreach>
+
+  </select>
+</mapper>

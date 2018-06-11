@@ -1,0 +1,4 @@
+#parse("nav/nav.vm")
+<center>
+	<h3>登录成功</h3>
+</center>

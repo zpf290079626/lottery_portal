@@ -1,0 +1,63 @@
+<center>
+	#if($!{registerError} != '')
+		<h3>$!{registerError}</h3>
+	#end
+	<h3>新用户注册</h3>
+	<form name="registerForm" action="/loginController/userRegister"
+		method="post">
+		<table border="0" cellspacing="0">
+			<tr>
+				<td>用户ID：</td>
+				<td><input type="text" name="userId" maxlength="20" /></td>
+			</tr>
+			<tr>
+				<td>用户姓名：</td>
+				<td><input type="text" name="userName" maxlength="20" /></td>
+			</tr>
+
+			<tr>
+				<td>密码：</td>
+				<td><input type="password" name="password" maxlength="20" /></td>
+			</tr>
+			<tr>
+				<td>确认密码：</td>
+				<td><input type="password" name="password2" maxlength="20" /></td>
+			</tr>
+			<tr>
+				<td>手机号码：</td>
+				<td><input type="text" name="tel" maxlength="11" /></td>
+			</tr>
+			<tr>
+				<td>邮箱地址：</td>
+				<td><input type="text" name="email" maxlength="100" /></td>
+			</tr>
+			<tr>
+				<td>验证码：</td>
+				<td>
+					<div class="code" id="checkCode" onclick="createCode()"></div> <a
+					href="#" onclick="createCode()">看不清换一张</a>
+				</td>
+			</tr>
+			<tr>
+				<td>请输入验证码：</td>
+				<td><input style="float: left;" type="text" id="inputCode" /></td>
+			</tr>
+			<tr>
+				<td>请输入邮箱验证码：</td>
+				<td><input style="float: left;" type="text" name="inputValiCode" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button type="button" class="btn btn-primary" style="padding:5px 16px;" onclick="obtainValiCode()" >邮箱验证</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;	        				
+	        		<button type="button" class="btn btn-primary pull-right" style="padding:5px 16px;text-align:right;" onclick="register()" >注册</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<hr>
+	欢迎
+</center>
+
+<script type="text/javascript" src="$request.contextPath/resources/js/login/register.js"></script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+    	<title>XXX数据分析</title>
+    	<!--第三方css，包括bootstrap、highcharts、echarts等-->
+    	<link rel="stylesheet" type="text/css" href="#springUrl("/resources/css/bootstrap/bootstrap.css")">
+    	<link rel="stylesheet" type="text/css" href="#springUrl("/resources/css/bootstrap/bootstrap.min.css")">
+    	<link rel="stylesheet" type="text/css" href="#springUrl("/resources/css/bootstrap/bootstrap-theme.css")">
+    	<link rel="stylesheet" type="text/css" href="#springUrl("/resources/css/bootstrap/bootstrap-theme.min.css")">
+    	
+    	<script type="text/javascript" src="#springUrl("/resources/js/jquery/jquery-3.1.1.min.js")"></script>
+    	
+    	<script type="text/javascript" src="#springUrl("/resources/js/bootstrap/bootstrap.js")"></script>
+    	<script type="text/javascript" src="#springUrl("/resources/js/bootstrap/bootstrap.min.js")"></script>
+    	
+    	<script type="text/javascript" src="#springUrl("/resources/js/dataTable/jquery.dataTables.min.js")"></script>
+    	<script type="text/javascript" src="#springUrl("/resources/js/dataTable/buttons.html5.min.js")"></script>
+    	<script type="text/javascript" src="#springUrl("/resources/js/dataTable/dataTables.buttons.min.js")"></script>
+    	<script type="text/javascript" src="#springUrl("/resources/js/dataTable/jszip.min.js")"></script>
+    	<link rel="stylesheet" type="text/css" href="#springUrl("/resources/css/dataTable/jquery.dataTables.min.css")">
+    	
+    </head>
+    <body style="min-width: 1328px;">
+    	<div id="page-wrapper" class="p20">
+    		$screen_content
+    	</div>
+    	<!-- Start Open Web Analytics Tracker -->
+		
+    
+		<script type="text/javascript">
+        	var basePath="$request.contextPath";
+		</script> 
+    </body>
+</html>

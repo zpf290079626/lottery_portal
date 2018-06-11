@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+  default-autowire="byName" default-lazy-init="false">
+
+  <bean id="getLotteryInfo" class="com.zpf.task.Lottery.GetLotteryInfo">
+    <property name="managerMail" value="${mail.manager}"></property>
+  </bean>
+
+  <!-- 定义调用对象和调用对象的方法 -->
+  <bean id="getLotteryInfoJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+    <property name="targetObject" ref="getLotteryInfo"/> <!-- 要调用的工作类 -->
+    <property name="targetMethod" value="task"/>
+    <property name="concurrent" value="true"/>
+  </bean>
+
+  <bean id="getLotteryInfoTrigger"
+    class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+    <property name="jobDetail" ref="getLotteryInfoJob"/>
+    <!--表达式，
+    每分钟执行一次:0 */1 * * * ?
+    每隔5秒执行一次：*/5 * * * * ?
+    每隔10分钟执行一次：0 */10 * * * ?
+    每天23点执行一次：0 0 23 * * ?
+    每天凌晨1点执行一次：0 0 1 * * ?
+    每月1号凌晨1点执行一次：0 0 1 1 * ?
+    每月最后一天23点执行一次：0 0 23 L * ?
+    每周星期天凌晨1点实行一次：0 0 1 ? * L
+    在26分、29分、33分执行一次：0 26,29,33 * * * ?
+    每天的0点、13点、18点、21点都执行一次：0 0 0,13,18,21 * * ? -->
+    <!-- 必填项：在此处定义定时任务时间 -->
+    <property name="cronExpression" value="0 0 22 * * ?"/>
+    <!--<property name="cronExpression" value="0 */1 * * * ?"/>-->
+
+  </bean>
+
+  <!-- 总管理类如果将lazy-init='false'那么容器启动就会执行调度程序 -->
+  <bean id="startQuertz"
+    class="org.springframework.scheduling.quartz.SchedulerFactoryBean"
+    lazy-init="false" autowire="no">
+    <property name="triggers">
+      <list>
+        <!--作业调度器,list下可加入其他的调度器 -->
+        <ref bean="getLotteryInfoTrigger"/>
+      </list>
+    </property>
+  </bean>
+</beans>

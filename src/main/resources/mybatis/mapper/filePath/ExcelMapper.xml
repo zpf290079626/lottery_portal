@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>                                                                                
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">           
+<mapper namespace="dao.filePath.ExcelMapper">                                                     
+	<resultMap                                                                                                          
+		type="com.zpf.domain.common.ExcelDomain"
+		id="dataExcelDomain">                                                                                           
+		<id     property="transCode"       column="TRANS_CODE"        javaType="String" jdbcType="VARCHAR"/> 
+		<result property="filePath"        column="FILE_PATH"         javaType="String" jdbcType="VARCHAR"/> 
+		<result property="fileComment"     column="FILE_COMMENT"      javaType="String" jdbcType="VARCHAR"/> 
+		<result property="prefix"          column="PREFIX"            javaType="String" jdbcType="VARCHAR"/> 
+		<result property="fileAlias"       column="FILE_ALIAS"        javaType="String" jdbcType="VARCHAR"/> 
+	</resultMap> 
+	
+	                                                                                     
+	<!-- 根据transcode查询文件路径参数表 -->	                                                                  
+	<select id="queryFilePathParam"                                                                                               
+					parameterType="string"                                                
+					resultMap="dataExcelDomain" >                                                  
+  		SELECT   T.TRANS_CODE     AS  transCode                                                                    
+             	,T.FILE_PATH      AS  filePath                                                                     										  
+             	,T.FILE_COMMENT   AS  fileComment                                                                  
+             	,T.PREFIX         AS  prefix                                                                       
+             	,T.FILE_ALIAS     AS  fileAlias                                                                    
+		FROM  FILE_PATH_PARAM T                                                                                          
+  		WHERE T.TRANS_CODE = #{transCode}                                                                  
+  	</select>                                                                                                         
+	                                                                                                                    
+</mapper>                                                                                                             
