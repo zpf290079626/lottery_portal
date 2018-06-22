@@ -94,7 +94,7 @@ public class GetLotteryInfo {
                 list.forEach(e -> {
                     String email = e.getEmail();
                     mail.setTo(email);
-
+                    sendMailService.sendMail(mail);
                 });
             }
 
