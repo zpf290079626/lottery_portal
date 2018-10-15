@@ -486,6 +486,6 @@
       </plugin>
 
     </plugins>
-    <finalName>app-server-1.0-SNAPSHOT</finalName>
+    <finalName>lottery_portal</finalName>
   </build>
 </project>
